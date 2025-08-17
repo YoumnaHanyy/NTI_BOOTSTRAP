@@ -4,15 +4,11 @@
         const createPostPage = document.getElementById('createPostPage');
         const profilePage = document.getElementById('profilePage');
         const singlePostPage = document.getElementById('singlePostPage');
-
-
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page-content, .main-container');
             pages.forEach(page => page.style.display = 'none');
             document.getElementById(pageId).style.display = 'block';
         }
-
-
         document.getElementById('loginForm').addEventListener('submit', (event) => {
             event.preventDefault(); 
             showPage('homePage');
