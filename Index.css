@@ -51,8 +51,8 @@
             cursor: pointer;
         }
         .page-content {
-            display: none; /* All pages are hidden by default */
+            display: none; 
         }
         #loginPage {
-            display: block; /* Show login page initially */
+            display: block; 
         }
