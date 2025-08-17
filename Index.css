@@ -1,0 +1,58 @@
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-box {
+            max-width: 400px;
+        }
+        .login-form .btn-primary {
+            background-color: #1877f2;
+            border-color: #1877f2;
+        }
+        .login-form .btn-primary:hover {
+            background-color: #166fe5;
+            border-color: #166fe5;
+        }
+        .login-form .btn-success {
+            background-color: #42b72a;
+            border-color: #42b72a;
+        }
+        .login-form .btn-success:hover {
+            background-color: #36a420;
+            border-color: #36a420;
+        }
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .navbar-search {
+            background-color: #f0f2f5;
+            border: none;
+            border-radius: 50px;
+        }
+        .navbar-search:focus {
+            background-color: #e4e6eb;
+        }
+        .post-card, .create-post-card {
+            border-radius: 1rem;
+        }
+        .post-card img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .post-content-clickable {
+            cursor: pointer;
+        }
+        .page-content {
+            display: none; /* All pages are hidden by default */
+        }
+        #loginPage {
+            display: block; /* Show login page initially */
+        }

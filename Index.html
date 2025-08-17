@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+
+</head>
+<body>
+
+    <!--
+        This is the main application container. It holds all the different "pages"
+        (login, home, create post, profile, etc.) which are hidden or shown
+        using JavaScript.
+    -->
+
+    <!-- Login Page -->
+    <div id="loginPage" class="main-container">
+        <div class="container py-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                    <h1 class="text-primary fw-bold display-1" style="font-size: 5rem;">facebook</h1>
+                    <p class="fs-4">
+                        Facebook helps you connect and share with the people in your life.
+                    </p>
+                </div>
+                <div class="col-lg-6 login-box">
+                    <div class="card shadow-sm p-4">
+                        <div class="card-body login-form">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Email address or phone number">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control form-control-lg" placeholder="Password">
+                                </div>
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-primary btn-lg fw-bold">Log In</button>
+                                </div>
+                                <div class="text-center mb-3">
+                                    <a href="#" class="text-decoration-none">Forgotten password?</a>
+                                </div>
+                                <hr class="my-3">
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-success btn-lg fw-bold px-4">Create new account</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <small><a href="#" class="text-decoration-none fw-bold">Create a Page</a> for a celebrity, band or business.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page & Main UI -->
+    <div id="homePage" class="page-content">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-2">
+            <div class="container-fluid">
+                <a class="navbar-brand text-primary me-4" href="#">facebook</a>
+                <form class="d-flex w-100 me-3">
+                    <input class="form-control navbar-search" type="search" placeholder="Search Facebook" aria-label="Search">
+                </form>
+                <ul class="navbar-nav d-flex flex-row align-items-center">
+                    <li class="nav-item me-3">
+                        <a href="#" class="btn btn-outline-primary rounded-pill" id="profileLink">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary rounded-pill" id="logoutButton">Log Out</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+
+                    <!-- What's on your mind? Card -->
+                    <div class="card shadow-sm mb-4 create-post-card">
+                        <div class="card-body">
+                            <h5 class="card-title">What's on your mind?</h5>
+                            <button class="btn btn-light w-100 text-start rounded-pill py-3 mt-3" id="createPostButton">
+                                <span class="text-muted">Create a post...</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Post Feed -->
+                    <div id="postFeed">
+                        <!-- Example Post 1 -->
+                        <div class="card shadow-sm mb-4 post-card post-content-clickable" data-post-id="1">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://placehold.co/40x40/5cb85c/ffffff?text=U" alt="User Profile" class="me-3">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Jane Doe</h6>
+                                        <small class="text-muted">Just now</small>
+                                    </div>
+                                </div>
+                                <p class="card-text post-content">
+                                    Having a great time learning how to build web pages with Bootstrap! It's so powerful and easy to use.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Example Post 2 -->
+                        <div class="card shadow-sm mb-4 post-card post-content-clickable" data-post-id="2">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://placehold.co/40x40/0275d8/ffffff?text=M" alt="User Profile" class="me-3">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">John Smith</h6>
+                                        <small class="text-muted">5 minutes ago</small>
+                                    </div>
+                                </div>
+                                <p class="card-text post-content">
+                                    Just finished an awesome project. The mobile responsiveness of Bootstrap is incredible! Highly recommend it.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Post Page -->
+    <div id="createPostPage" class="page-content py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-sm p-4">
+                        <h4 class="card-title text-center mb-4">Create Post</h4>
+                        <div class="mb-3">
+                            <textarea class="form-control rounded-4" id="postTextarea" rows="6" placeholder="What's on your mind?"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-secondary me-2 rounded-pill" id="cancelPostButton">Cancel</button>
+                            <button class="btn btn-primary rounded-pill" id="sharePostButton">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profilePage" class="page-content py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <!-- Profile Header -->
+                    <div class="card shadow-sm mb-4">
+                        <img src="https://placehold.co/1000x350/cccccc/333333?text=Cover+Photo" class="card-img-top" alt="Cover Photo">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3" style="margin-top: -6rem;">
+                                <img src="https://placehold.co/150x150/000000/ffffff?text=Your+Profile" class="rounded-circle border border-5 border-white me-4" alt="Profile Picture">
+                                <div>
+                                    <h2 class="mb-0 fw-bold">Your Name</h2>
+                                    <p class="text-muted">Your Bio here...</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0">Posts</h4>
+                                <button class="btn btn-secondary rounded-pill" id="backToHomeButton">Back to Home</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Timeline -->
+                    <div id="profileTimeline">
+                        <!-- Example Post on Profile -->
+                        <div class="card shadow-sm mb-4 post-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://placehold.co/40x40/000000/ffffff?text=Y" alt="User Profile" class="me-3">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Your Name</h6>
+                                        <small class="text-muted">Today</small>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                    Welcome to my profile! This is a simple timeline post.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Single Post Page -->
+    <div id="singlePostPage" class="page-content py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-sm p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img id="singlePostUserImage" src="" alt="User Profile" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                            <div>
+                                <h6 class="mb-0 fw-bold" id="singlePostUserName"></h6>
+                                <small class="text-muted" id="singlePostTime"></small>
+                            </div>
+                        </div>
+                        <p class="card-text" id="singlePostContent"></p>
+                        <hr>
+                        <button class="btn btn-secondary rounded-pill mt-3" id="backFromPostButton">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="Index.js"></script>
+</body>
+</html>
